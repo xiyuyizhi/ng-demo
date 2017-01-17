@@ -15,7 +15,7 @@ export default angular.module('todoForm',[])
 				template:temp,
 				bindToController:true,
 				controllerAs:'$ctrl',
-				controller:function(){
+				controller:function($scope){
 					const ctrl=this
 
 					this.$onInit=function(){
@@ -39,7 +39,9 @@ export default angular.module('todoForm',[])
 						}
 					}
 
-
+					$scope.$on('reset',(data,data1) => {
+						this.todo.content=''
+					})
 				}
 			}
 	})

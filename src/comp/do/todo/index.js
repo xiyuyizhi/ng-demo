@@ -14,14 +14,14 @@ const instruct=`TODO小功能，主要练习component方法,将功能按组件�
 export default angular.module('TODO', [todoForm, todoList, radio])
 	.component('todo',{
 		template: temp,
-		controller: function (service) {
+		controller: function ($scope,service) {
 			'ngInject'
 
 			const ctrl = this
 			this.$onInit = function () {
 				this.todoList=[]
 				service.getList().then(function (data) {
-					ctrl.todoList = data
+					ctrl.todoList = data || []
 				})
 			}
 
@@ -41,6 +41,7 @@ export default angular.module('TODO', [todoForm, todoList, radio])
 				reset: ()=> {
 					this.todoList = []
 					service.update(null)
+					$scope.$broadcast('reset',true)
 				}
 			}
 
