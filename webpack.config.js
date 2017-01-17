@@ -14,7 +14,7 @@ var config={
         vendors:['angular','angular-ui-router']
     },
     output:{
-        path:'dist',
+        path:'docs',
         filename:'app.[hash].js'
     },
     resolve: {
