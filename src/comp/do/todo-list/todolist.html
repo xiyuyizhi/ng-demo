@@ -1,0 +1,12 @@
+
+<ul class="todo-list">
+    <li ng-repeat="item in $ctrl.theList track by item.id">
+        <div ng-if="item.todo">
+            <radio n-index="{{$index}}" n-callback="$ctrl.dele($event)"></radio>
+            <span>{{item.content}}</span>
+        </div>
+        <div ng-if="!item.todo">
+            <span class="del">{{item.content}}</span>
+        </div>
+    </li>
+</ul>

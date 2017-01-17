@@ -1,0 +1,8 @@
+<div class="todo">
+    <todo-form n-callback="$ctrl.handler.addNew($event)"></todo-form>
+    <todo-list  n-list="$ctrl.todoList" on-handle-dele="$ctrl.handler.dele($event)"></todo-list>
+    <div class="reset">
+        <button class="btn" ng-click="$ctrl.handler.reset()">清空</button>
+    </div>
+</div>
+
