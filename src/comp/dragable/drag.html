@@ -3,7 +3,7 @@
         dnd-allowed-types="[]"
         dnd-list="vm.sources">
         <li ng-repeat="item in vm.sources"
-            dnd-type="item.id"
+            dnd-type="'all'"
             dnd-draggable="item"
             dnd-effect-allowed="copy"
             dnd-dragstart="vm.startCallback1()"
@@ -15,31 +15,31 @@
 
     <div class="u2">
         <ul class="row"
-            dnd-allowed-types="vm.rowAllows"
+            dnd-allowed-types="['all']"
             dnd-drop="vm.dropCallback(index, item)"
             dnd-list="vm.dist.row">
             <li ng-repeat="item in vm.dist.row"
-                dnd-type="item.id"
+                dnd-type="'all'"
                 dnd-draggable="item"
                 dnd-effect-allowed="move"
                 dnd-dragstart="vm.startCallback2()"
                 dnd-moved="vm.rowCallback($index,item)">
                 <div>
                     <span>{{item.name}}</span>
-                <ul class="menu" ng-class="{show:item.click}">
-                    <li ng-click="item.click=!item.click">:</li>
-                    <li ng-click="vm.delete($index,item,'row')">删除</li>
-                </ul>
+                    <ul class="menu" ng-class="{show:item.click}">
+                        <li ng-click="item.click=!item.click">:</li>
+                        <li ng-click="vm.delete($index,item,'row')">删除</li>
+                    </ul>
                 </div>
 
             </li>
         </ul>
         <ul class="cell"
-            dnd-allowed-types="vm.cellAllows"
+            dnd-allowed-types="['all']"
             dnd-drop="vm.dropCallback(index, item)"
             dnd-list="vm.dist.cell">
             <li ng-repeat="item in vm.dist.cell"
-                dnd-type="item.id"
+                dnd-type="'all'"
                 dnd-draggable="item"
                 dnd-effect-allowed="move"
                 dnd-dragstart="vm.startCallback2()"
@@ -50,6 +50,7 @@
                         <li ng-click="item.click=!item.click">:</li>
                         <li ng-click="vm.delete($index,item,'cell')">删除</li>
                     </ul>
+                </div>
             </li>
         </ul>
     </div>

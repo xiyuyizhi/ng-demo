@@ -7,7 +7,6 @@ export default class Drag {
 
 	constructor() {
 		console.log('drag')
-
 		this.sources = [
 			{
 				id:'s1',
@@ -40,14 +39,8 @@ export default class Drag {
 			cell:[]
 		}
 
-		this.rowAllows=[]
-		this.cellAllows=[]
 		this.used=[]
 		this.fromSource=true
-		this.sources.forEach( item =>{
-			this.rowAllows.push(item.id)
-			this.cellAllows.push(item.id)
-		})
 
 		/**
 		 * 已经复制的元素不允许再次复制
@@ -65,9 +58,6 @@ export default class Drag {
 			this.fromSource=false
 		}
 		this.dropCallback=function(index,item){
-			console.log(index)
-			console.log(item)
-			console.log(this.used)
 			if(this.fromSource){
 				for(const val of this.used){
 					if(val.id==item.id){
@@ -84,12 +74,8 @@ export default class Drag {
 		 * @param index
 		 * @param current
 		 */
-	  this.rowCallback=function(index,current){
+	  this.rowCallback=function(index){
 			this.dist.row.splice(index,1)
-		  this.cellAllows.splice(this.cellAllows.indexOf(current.id),1)
-			if(this.rowAllows.indexOf(current.id)==-1){
-				this.rowAllows.unshift(current.id)
-			}
 	  }
 
 		/**
@@ -97,17 +83,12 @@ export default class Drag {
 		 * @param index
 		 * @param current
 		 */
-	  this.cellCallback=function(index,current){
+	  this.cellCallback=function(index){
 		  this.dist.cell.splice(index,1)
-		  this.rowAllows.splice(this.rowAllows.indexOf(current.id),1)
-		  if(this.cellAllows.indexOf(current.id)==-1){
-			  this.cellAllows.unshift(current.id)
-		  }
 	  }
 
 	  this.delete=function(index,item,type){
 		  this.dist[type].splice(index,1)
-		  console.log(this.used.indexOf(item))
 		  let indx
 		  this.used.forEach( (val,ind)=>{
 			  if(val.id==item.id){
