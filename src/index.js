@@ -9,8 +9,9 @@ import './style.less'
 import todo from "./comp/do/todo"
 import model from "./comp/ng_model"
 import cusEditor from "./comp/editableArea"
+import drag from "./comp/dragable"
 
-angular.module('TEST', ['ui.router',todo,model,cusEditor])
+angular.module('TEST', ['ui.router',todo,model,cusEditor,drag])
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject'
         console.log('in config')

@@ -1,0 +1,64 @@
+
+.dragArea {
+  width: 70%;
+  height: 400px;
+  margin: 0 auto;
+  color: #000;
+  ul[dnd-list] .dndPlaceholder {
+    background-color: #ddd !important;
+    display: block;
+    min-height: 42px;
+  }
+  ul[dnd-list] .dndDragging {
+    background-color: red;
+    color: #ffffff;
+    cursor: none;
+  }
+  ul[dnd-list] .dndDraggingSource {
+    background: #f1f1f1;
+    color: #000;
+  }
+
+  li {
+    position: relative;
+    line-height: 30px;
+    cursor: pointer;
+    background: #f1f1f1;
+    margin: 5px;
+    .menu{
+      width:50px;
+      height: 30px;
+      overflow: hidden;
+      position: absolute;
+      right:0;
+      top:0;
+      li{
+        margin:0;
+      }
+      &.show{
+        z-index: 999;
+        height: 60px;
+      }
+    }
+  }
+  .u1 {
+    width: 50%;
+    float: left;
+    border: 1px solid #f1f1f1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .u2 {
+    width: 50%;
+    float: right;
+    .row,.cell{
+      min-height: 200px;
+      background: #f3f3f3;
+    }
+    .row{
+      margin-bottom: 10px;
+    }
+  }
+
+}

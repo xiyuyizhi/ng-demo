@@ -147,3 +147,65 @@ a:hover {
   text-align: left;
   padding: 3px;
 }
+.dragArea {
+  width: 70%;
+  height: 400px;
+  margin: 0 auto;
+  color: #000;
+}
+.dragArea ul[dnd-list] .dndPlaceholder {
+  background-color: #ddd !important;
+  display: block;
+  min-height: 42px;
+}
+.dragArea ul[dnd-list] .dndDragging {
+  background-color: red;
+  color: #ffffff;
+  cursor: none;
+}
+.dragArea ul[dnd-list] .dndDraggingSource {
+  background: #f1f1f1;
+  color: #000;
+}
+.dragArea li {
+  position: relative;
+  line-height: 30px;
+  cursor: pointer;
+  background: #f1f1f1;
+  margin: 5px;
+}
+.dragArea li .menu {
+  width: 50px;
+  height: 30px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.dragArea li .menu li {
+  margin: 0;
+}
+.dragArea li .menu.show {
+  z-index: 999;
+  height: 60px;
+}
+.dragArea .u1 {
+  width: 50%;
+  float: left;
+  border: 1px solid #f1f1f1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dragArea .u2 {
+  width: 50%;
+  float: right;
+}
+.dragArea .u2 .row,
+.dragArea .u2 .cell {
+  min-height: 200px;
+  background: #f3f3f3;
+}
+.dragArea .u2 .row {
+  margin-bottom: 10px;
+}
