@@ -11,7 +11,7 @@ var config={
 
     entry:{
         app:__dirname+'/src/index.js',
-        vendors:['angular','angular-ui-router']
+        vendors:['angular','angular-ui-router','dragula','angular-drag-and-drop-lists']
     },
     output:{
         path:'docs',
@@ -20,7 +20,8 @@ var config={
     resolve: {
         modulesDirectories: ['node_modules','./'],
         alias: {
-            'npm': __dirname + '/node_modules'
+            'npm': __dirname + '/node_modules',
+            'dragula':'angularjs-dragula/dist/angular-dragula.js'
         },
         extensions: ['', '.js', '.html','.css']
     },
@@ -45,7 +46,7 @@ var config={
                 )
             },
             {
-                test: /\.(png|jpg|jpeg)$/,
+                test: /\.(png|jpg|jpeg|svg)$/,
                 loader: 'url?limit=1024'
             },{
                 test:/\.html/,

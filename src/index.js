@@ -10,11 +10,11 @@ import todo from "./comp/do/todo"
 import model from "./comp/ng_model"
 import cusEditor from "./comp/editableArea"
 import drag from "./comp/dragable"
+import dragula from "./comp/dragula"
 
-angular.module('TEST', ['ui.router',todo,model,cusEditor,drag])
+angular.module('TEST', ['ui.router',todo,model,cusEditor,drag,dragula])
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject'
-        console.log('in config')
         $stateProvider.state('root', {
                 url: '/root',
                 views:{
