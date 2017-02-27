@@ -1,0 +1,55 @@
+{
+  "name": "D9DFCF16-E07D-E530-A0F6-7675A6A67698",
+  "queryModel": {
+    "axes": {
+      "FILTER": {
+        "mdx": null,
+        "filters": [],
+        "sortOrder": null,
+        "sortEvaluationLiteral": null,
+        "hierarchizeMode": null,
+        "location": "FILTER",
+        "hierarchies": [],
+        "nonEmpty": false
+      },
+      "COLUMNS": {
+        "mdx": null,
+        "filters": [],
+        "sortOrder": null,
+        "sortEvaluationLiteral": null,
+        "hierarchizeMode": null,
+        "location": "COLUMNS",
+        "hierarchies": [],
+        "nonEmpty": true
+      },
+      "ROWS": {
+        "mdx": null,
+        "filters": [],
+        "sortOrder": null,
+        "sortEvaluationLiteral": null,
+        "hierarchizeMode": null,
+        "location": "ROWS",
+        "hierarchies": [],
+        "nonEmpty": true
+      }
+    },
+    "visualTotals": false,
+    "visualTotalsPattern": null,
+    "lowestLevelsOnly": false,
+    "details": {
+      "axis": "COLUMNS",
+      "location": "BOTTOM",
+      "measures": []
+    },
+    "calculatedMeasures": [],
+    "calculatedMembers": []
+  },
+  "queryType": "OLAP",
+  "type": "QUERYMODEL",
+  "cube": {
+    "connection": "tm_data",
+    "catalog": "tm_schema",
+    "schema": "tm_schema",
+    "name": "tm_cube"
+  }
+}

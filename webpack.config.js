@@ -21,7 +21,8 @@ var config={
         modulesDirectories: ['node_modules','./'],
         alias: {
             'npm': __dirname + '/node_modules',
-            'dragula':'angularjs-dragula/dist/angular-dragula.js'
+            'dragula':'angularjs-dragula/dist/angular-dragula.js',
+            'dragular.css':'angularjs-dragula/dist/dragula.min.css'
         },
         extensions: ['', '.js', '.html','.css']
     },
@@ -43,6 +44,12 @@ var config={
                 loader: ExtractTextPlugin.extract(
                     'style-loader',
                     'css-loader!less'
+                )
+            },{
+                test:/\.css/,
+                loader: ExtractTextPlugin.extract(
+                  'style-loader',
+                  'css-loader'
                 )
             },
             {

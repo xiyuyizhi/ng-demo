@@ -1,0 +1,26 @@
+<div class="dragulaArea">
+    <ul id="u1" class="u1" dragula='"two"' dragula-model="vm.sources">
+        <li class='{{item.id}}' ng-repeat="item in vm.sources">
+            <span ng-bind="item.name"></span>
+        </li>
+    </ul>
+
+    <div class="u2">
+        <ul class="row" dragula='"two"' dragula-model="vm.dist.row">
+            <li ng-repeat="item in vm.dist.row" >
+                <div>
+                    <span>{{item.name}}</span>
+                </div>
+
+            </li>
+        </ul>
+        <ul class="cell" dragula='"two"' dragula-model="vm.dist.cell">
+            <li ng-repeat="item in vm.dist.cell" >
+                <div>
+                    <span>{{item.name}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>

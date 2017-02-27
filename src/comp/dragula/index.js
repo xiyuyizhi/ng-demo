@@ -3,6 +3,11 @@
  */
 
 import angularDragula from "dragula"
+import "dragular.css"
+import ctrl from "./ctrl"
+import temp from "./dragula.html"
+import './dragula.less'
+
 export default angular.module('dragu',[angularDragula(angular)])
 .config( $stateProvider=>{
 
@@ -14,7 +19,9 @@ export default angular.module('dragu',[angularDragula(angular)])
 				template:'dragula 使用 demo'
 			},
 			content:{
-				template:'dragula'
+				template:temp,
+				controller:ctrl,
+				controllerAs:'vm'
 			}
 		}
 	})
