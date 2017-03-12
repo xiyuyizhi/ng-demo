@@ -11,11 +11,11 @@ var config={
 
     entry:{
         app:__dirname+'/src/index.js',
-        vendors:['angular','angular-ui-router','dragula','angular-drag-and-drop-lists']
+        vendors:['angular','angular-ui-router','angular-ui-bootstrap','dragula','angular-drag-and-drop-lists']
     },
     output:{
         path:'docs',
-        filename:'app.[hash].js'
+        filename:'[name].[hash].js'
     },
     resolve: {
         modulesDirectories: ['node_modules','./'],
@@ -45,7 +45,8 @@ var config={
                     'style-loader',
                     'css-loader!less'
                 )
-            },{
+            },
+            {
                 test:/\.css/,
                 loader: ExtractTextPlugin.extract(
                   'style-loader',
@@ -70,7 +71,7 @@ var config={
         //new webpack.optimize.UglifyJsPlugin({minimize: true}),
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new DashboardPlugin(),
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin("[name].css"),
         new HtmlWebpackPlugin({
             template:'src/index.html',
             inject: 'body'

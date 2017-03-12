@@ -10,25 +10,31 @@ webpackJsonp([0],[
 
 	__webpack_require__(4);
 
-	var _todo = __webpack_require__(8);
+	__webpack_require__(6);
+
+	var _todo = __webpack_require__(10);
 
 	var _todo2 = _interopRequireDefault(_todo);
 
-	var _ng_model = __webpack_require__(25);
+	var _ng_model = __webpack_require__(27);
 
 	var _ng_model2 = _interopRequireDefault(_ng_model);
 
-	var _editableArea = __webpack_require__(26);
+	var _editableArea = __webpack_require__(28);
 
 	var _editableArea2 = _interopRequireDefault(_editableArea);
 
-	var _dragable = __webpack_require__(32);
+	var _dragable = __webpack_require__(34);
 
 	var _dragable2 = _interopRequireDefault(_dragable);
 
-	var _dragula = __webpack_require__(38);
+	var _dragula = __webpack_require__(40);
 
 	var _dragula2 = _interopRequireDefault(_dragula);
+
+	var _ui = __webpack_require__(51);
+
+	var _ui2 = _interopRequireDefault(_ui);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,14 +42,14 @@ webpackJsonp([0],[
 	 * Created by xiyuyizhi on 17-1-3.
 	 */
 
-	angular.module('TEST', ['ui.router', _todo2.default, _ng_model2.default, _editableArea2.default, _dragable2.default, _dragula2.default]).config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+	angular.module('TEST', ['ui.router', 'ui.bootstrap', _todo2.default, _ng_model2.default, _editableArea2.default, _dragable2.default, _dragula2.default, _ui2.default]).config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 	    'ngInject';
 
 	    $stateProvider.state('root', {
 	        url: '/root',
 	        views: {
 	            'root': {
-	                template: __webpack_require__(49)
+	                template: __webpack_require__(54)
 	            }
 	        }
 	    }).state('app', {
@@ -51,7 +57,7 @@ webpackJsonp([0],[
 	        url: '/app',
 	        views: {
 	            'root': {
-	                template: __webpack_require__(50)
+	                template: __webpack_require__(55)
 	            }
 	        }
 	    });
@@ -70,20 +76,24 @@ webpackJsonp([0],[
 	 *
 	 */
 
+	// import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css"
+
 /***/ },
 /* 1 */,
 /* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 5 */,
-/* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */,
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -92,25 +102,25 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	var _todoForm = __webpack_require__(9);
+	var _todoForm = __webpack_require__(11);
 
 	var _todoForm2 = _interopRequireDefault(_todoForm);
 
-	var _todoList = __webpack_require__(13);
+	var _todoList = __webpack_require__(15);
 
 	var _todoList2 = _interopRequireDefault(_todoList);
 
-	var _radio = __webpack_require__(17);
+	var _radio = __webpack_require__(19);
 
 	var _radio2 = _interopRequireDefault(_radio);
 
-	var _todo = __webpack_require__(21);
+	var _todo = __webpack_require__(23);
 
 	var _todo2 = _interopRequireDefault(_todo);
 
-	__webpack_require__(22);
+	__webpack_require__(24);
 
-	var _service = __webpack_require__(24);
+	var _service = __webpack_require__(26);
 
 	var _service2 = _interopRequireDefault(_service);
 
@@ -178,7 +188,7 @@ webpackJsonp([0],[
 	}]).name;
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -187,11 +197,11 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	var _todoform = __webpack_require__(10);
+	var _todoform = __webpack_require__(12);
 
 	var _todoform2 = _interopRequireDefault(_todoform);
 
-	__webpack_require__(11);
+	__webpack_require__(13);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -242,20 +252,20 @@ webpackJsonp([0],[
 	}).name;
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"todo-form\">\n    <label>todo:</label>\n    <input type=\"text\" ng-model=\"$ctrl.todo.content\" ng-keypress=\"$ctrl.handler.enter($event)\">\n</div>\n";
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 12 */,
-/* 13 */
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -264,11 +274,11 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	var _todolist = __webpack_require__(14);
+	var _todolist = __webpack_require__(16);
 
 	var _todolist2 = _interopRequireDefault(_todolist);
 
-	__webpack_require__(15);
+	__webpack_require__(17);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -312,20 +322,20 @@ webpackJsonp([0],[
 	}).name;
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<ul class=\"todo-list\">\n    <li ng-repeat=\"item in $ctrl.theList track by item.id\">\n        <div ng-if=\"item.todo\">\n            <radio n-index=\"{{$index}}\" n-callback=\"$ctrl.dele($event)\"></radio>\n            <span>{{item.content}}</span>\n        </div>\n        <div ng-if=\"!item.todo\">\n            <span class=\"del\">{{item.content}}</span>\n        </div>\n    </li>\n</ul>";
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 16 */,
-/* 17 */
+/* 18 */,
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -334,11 +344,11 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	var _radio = __webpack_require__(18);
+	var _radio = __webpack_require__(20);
 
 	var _radio2 = _interopRequireDefault(_radio);
 
-	__webpack_require__(19);
+	__webpack_require__(21);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -379,33 +389,33 @@ webpackJsonp([0],[
 	}).name;
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<span class=\"radio-circle\">\n    <span class=\"radio-inner-circle\"\n          ng-class=\"{active:$ctrl.switch.on}\"\n          ng-click=\"$ctrl.handler.click()\"></span>\n</span>";
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 20 */,
-/* 21 */
+/* 22 */,
+/* 23 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"todo\">\n    <todo-form n-callback=\"$ctrl.handler.addNew($event)\"></todo-form>\n    <todo-list  n-list=\"$ctrl.todoList\" on-handle-dele=\"$ctrl.handler.dele($event)\"></todo-list>\n    <div class=\"reset\">\n        <button class=\"btn\" ng-click=\"$ctrl.handler.reset()\">清空</button>\n    </div>\n</div>\n\n";
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 23 */,
-/* 24 */
+/* 25 */,
+/* 26 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -463,7 +473,7 @@ webpackJsonp([0],[
 	exports.default = TodoService;
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -516,7 +526,7 @@ webpackJsonp([0],[
 	}]).name;
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -525,15 +535,15 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	__webpack_require__(27);
-
 	__webpack_require__(29);
+
+	__webpack_require__(31);
 
 	/**
 	 * Created by xiyuyizhi on 17-1-17.
 	 */
 
-	var img = __webpack_require__(31);
+	var img = __webpack_require__(33);
 	console.log(img);
 
 	var html = "<img src=\"" + img + "\">";
@@ -589,20 +599,20 @@ webpackJsonp([0],[
 	}]).name;
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(28);
+	__webpack_require__(30);
 	module.exports = 'ngSanitize';
 
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	/**
-	 * @license AngularJS v1.6.1
-	 * (c) 2010-2016 Google, Inc. http://angularjs.org
+	 * @license AngularJS v1.6.2
+	 * (c) 2010-2017 Google, Inc. http://angularjs.org
 	 * License: MIT
 	 */
 	(function(window, angular) {'use strict';
@@ -1342,20 +1352,20 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 30 */,
-/* 31 */
+/* 32 */,
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "208649b7ebdb428142b0b933c26bb69a.png";
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1364,17 +1374,17 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	__webpack_require__(33);
+	__webpack_require__(35);
 
-	var _drag = __webpack_require__(34);
+	var _drag = __webpack_require__(36);
 
 	var _drag2 = _interopRequireDefault(_drag);
 
-	var _ctrl = __webpack_require__(35);
+	var _ctrl = __webpack_require__(37);
 
 	var _ctrl2 = _interopRequireDefault(_ctrl);
 
-	__webpack_require__(36);
+	__webpack_require__(38);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1406,14 +1416,14 @@ webpackJsonp([0],[
 	 */
 
 /***/ },
-/* 33 */,
-/* 34 */
+/* 35 */,
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dragArea\">\n    <ul class=\"u1\"\n        dnd-allowed-types=\"[]\"\n        dnd-list=\"vm.sources\">\n        <li ng-repeat=\"item in vm.sources\"\n            dnd-type=\"'all'\"\n            dnd-draggable=\"item\"\n            dnd-effect-allowed=\"copy\"\n            dnd-dragstart=\"vm.startCallback1()\"\n            dnd-copied=\"vm.copiedCallback($index,item)\"\n        >\n            <span ng-bind=\"item.name\"></span>\n        </li>\n    </ul>\n\n    <div class=\"u2\">\n        <ul class=\"row\"\n            dnd-allowed-types=\"['all']\"\n            dnd-drop=\"vm.dropCallback(index, item)\"\n            dnd-list=\"vm.dist.row\">\n            <li ng-repeat=\"item in vm.dist.row\"\n                dnd-type=\"'all'\"\n                dnd-draggable=\"item\"\n                dnd-effect-allowed=\"move\"\n                dnd-dragstart=\"vm.startCallback2()\"\n                dnd-moved=\"vm.rowCallback($index,item)\">\n                <div>\n                    <span>{{item.name}}</span>\n                    <ul class=\"menu\" ng-class=\"{show:item.click}\">\n                        <li ng-click=\"item.click=!item.click\">:</li>\n                        <li ng-click=\"vm.delete($index,item,'row')\">删除</li>\n                    </ul>\n                </div>\n\n            </li>\n        </ul>\n        <ul class=\"cell\"\n            dnd-allowed-types=\"['all']\"\n            dnd-drop=\"vm.dropCallback(index, item)\"\n            dnd-list=\"vm.dist.cell\">\n            <li ng-repeat=\"item in vm.dist.cell\"\n                dnd-type=\"'all'\"\n                dnd-draggable=\"item\"\n                dnd-effect-allowed=\"move\"\n                dnd-dragstart=\"vm.startCallback2()\"\n                dnd-moved=\"vm.cellCallback($index,item)\">\n                <div>\n                    <span>{{item.name}}</span>\n                    <ul class=\"menu\" ng-class=\"{show:item.click}\">\n                        <li ng-click=\"item.click=!item.click\">:</li>\n                        <li ng-click=\"vm.delete($index,item,'cell')\">删除</li>\n                    </ul>\n                </div>\n            </li>\n        </ul>\n    </div>\n\n</div>";
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1545,14 +1555,14 @@ webpackJsonp([0],[
 	exports.default = Drag;
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 37 */,
-/* 38 */
+/* 39 */,
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1561,21 +1571,21 @@ webpackJsonp([0],[
 		value: true
 	});
 
-	var _dragula = __webpack_require__(39);
+	var _dragula = __webpack_require__(41);
 
 	var _dragula2 = _interopRequireDefault(_dragula);
 
-	__webpack_require__(43);
+	__webpack_require__(45);
 
-	var _ctrl = __webpack_require__(45);
+	var _ctrl = __webpack_require__(47);
 
 	var _ctrl2 = _interopRequireDefault(_ctrl);
 
-	var _dragula3 = __webpack_require__(46);
+	var _dragula3 = __webpack_require__(48);
 
 	var _dragula4 = _interopRequireDefault(_dragula3);
 
-	__webpack_require__(47);
+	__webpack_require__(49);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1600,18 +1610,18 @@ webpackJsonp([0],[
 	          */
 
 /***/ },
-/* 39 */,
-/* 40 */,
 /* 41 */,
 /* 42 */,
-/* 43 */
+/* 43 */,
+/* 44 */,
+/* 45 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 44 */,
-/* 45 */
+/* 46 */,
+/* 47 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1718,26 +1728,118 @@ webpackJsonp([0],[
 	exports.default = Ctrl;
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"dragulaArea\">\n    <ul id=\"u1\" class=\"u1\" dragula='\"two\"' dragula-model=\"vm.sources\">\n        <li class='{{item.id}}' ng-repeat=\"item in vm.sources\">\n            <span ng-bind=\"item.name\"></span>\n        </li>\n    </ul>\n\n    <div class=\"u2\">\n        <ul class=\"row\" dragula='\"two\"' dragula-model=\"vm.dist.row\">\n            <li ng-repeat=\"item in vm.dist.row\" >\n                <div>\n                    <span>{{item.name}}</span>\n                </div>\n\n            </li>\n        </ul>\n        <ul class=\"cell\" dragula='\"two\"' dragula-model=\"vm.dist.cell\">\n            <li ng-repeat=\"item in vm.dist.cell\" >\n                <div>\n                    <span>{{item.name}}</span>\n                </div>\n            </li>\n        </ul>\n    </div>\n\n</div>";
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 48 */,
-/* 49 */
-/***/ function(module, exports) {
+/* 50 */,
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<h2 class=\"app-title\">angular demo</h2>\n<ul class=\"app-list\">\n    <li><a ui-sref=\"todo\">todo</a></li>\n    <li><a ui-sref=\"model\">ngModel、ngModelController</a></li>\n    <li><a ui-sref=\"editable\">自定义双向绑定contenteditable区域</a></li>\n    <li><a ui-sref=\"dragable\">angular-drag-and-drop-lists</a></li>\n    <li><a ui-sref=\"dragula\">dragula</a></li>\n</ul>";
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _temp = __webpack_require__(52);
+
+	var _temp2 = _interopRequireDefault(_temp);
+
+	var _ctrl = __webpack_require__(53);
+
+	var _ctrl2 = _interopRequireDefault(_ctrl);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Created by evannayf on 17-3-12.
+	 */
+
+	exports.default = angular.module('pagination.test', []).config(["$stateProvider", function ($stateProvider) {
+
+	    $stateProvider.state('pagina', {
+	        parent: 'app',
+	        url: '/pagina',
+	        views: {
+	            default: {
+	                template: 'ui-bootstrap 分页指令 使用'
+	            },
+	            content: {
+	                template: _temp2.default,
+	                controller: _ctrl2.default,
+	                controllerAs: 'vm'
+	            }
+	        }
+	    });
+	}]).name;
 
 /***/ },
-/* 50 */
+/* 52 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul uib-pagination total-items=\"totalItems\"\n    ng-model=\"currentPage\" items-per-page=\"4\">\n\n</ul>\n";
+
+/***/ },
+/* 53 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * Created by evannayf on 17-3-12.
+	 */
+	var Ctrl = function () {
+	    Ctrl.$inject = ["$rootScope"];
+	    function Ctrl($rootScope) {
+	        'ngInject';
+
+	        _classCallCheck(this, Ctrl);
+
+	        this.totalItems = 10;
+	        this.currentPage = 1;
+	        console.log($rootScope);
+	        $rootScope.totalItems = 10;
+	        $rootScope.currentPage = 1;
+	    }
+
+	    _createClass(Ctrl, [{
+	        key: 'test',
+	        value: function test() {
+
+	            $rootScope.apply(function () {});
+	        }
+	    }]);
+
+	    return Ctrl;
+	}();
+
+	exports.default = Ctrl;
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
+
+	module.exports = "<h2 class=\"app-title\">angular demo</h2>\n<ul class=\"app-list\">\n    <li><a ui-sref=\"todo\">todo</a></li>\n    <li><a ui-sref=\"model\">ngModel、ngModelController</a></li>\n    <li><a ui-sref=\"editable\">自定义双向绑定contenteditable区域</a></li>\n    <li><a ui-sref=\"dragable\">angular-drag-and-drop-lists</a></li>\n    <li><a ui-sref=\"dragula\">dragula</a></li>\n    <li><a ui-sref=\"pagina\">pagination</a></li>\n</ul>";
+
+/***/ },
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"app-instruction\">\n    <h1>介绍<a ui-sref=\"root\">返回</a></h1>\n    <blockquote>\n        <p ui-view=\"default\"></p>\n    </blockquote>\n</div>\n<div ui-view=\"content\" class=\"app-content\"></div>";

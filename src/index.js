@@ -4,6 +4,8 @@
 
 import "angular"
 import "angular-ui-router"
+import "angular-ui-bootstrap"
+// import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css"
 
 import './style.less'
 import todo from "./comp/do/todo"
@@ -11,8 +13,9 @@ import model from "./comp/ng_model"
 import cusEditor from "./comp/editableArea"
 import drag from "./comp/dragable"
 import dragula from "./comp/dragula"
+import paginationTest from "./comp/ui.bootstrap"
 
-angular.module('TEST', ['ui.router',todo,model,cusEditor,drag,dragula])
+angular.module('TEST', ['ui.router','ui.bootstrap',todo,model,cusEditor,drag,dragula,paginationTest])
     .config(($stateProvider, $urlRouterProvider) => {
         'ngInject'
         $stateProvider.state('root', {
